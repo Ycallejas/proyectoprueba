@@ -1,0 +1,10 @@
+<?php
+require_once("config.php");
+require_once("controlador/controlador.php");
+if(isset($_GET['m'])):
+	if(method_exists("controladormodelo",$_GET['m'])):
+		controladormodelo::{$_GET['m']}();
+	endif;
+else:
+    controladormodelo::presentar();
+endif;
